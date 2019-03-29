@@ -1,2 +1,3 @@
 # MySQL_Study
-Study Notes
+Study Notes  
+## Day1 :
