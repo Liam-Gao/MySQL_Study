@@ -23,11 +23,11 @@ select由以下几个子句组成：
 #### 聚合函数
 AVG、COUNT、SUM、MIN、MAX，除了COUNT外，其他聚合函数在 执行计算时会忽略NULL值。
 ## 作业
-问题1：  
+### 问题1：  
 ![Q1](https://github.com/Liam-Gao/MySQL_Study/blob/master/PNG/hw1-Q1.jpg)
-答案：  
+### 答案：  
 ![Q11](https://github.com/Liam-Gao/MySQL_Study/blob/master/PNG/hw1-1.jpg)
-问题2：  
+### 问题2：  
 ![Q2](https://github.com/Liam-Gao/MySQL_Study/blob/master/PNG/hw1-Q2.jpg)
-答案：  
+### 答案：  
 ![Q22](https://github.com/Liam-Gao/MySQL_Study/blob/master/PNG/hw1-2.jpg)
