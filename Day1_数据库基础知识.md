@@ -1,3 +1,15 @@
+# 内容
+数据库基础知识：
+- 数据库定义
+- 关系型数据库
+- 二维表
+- 行、列、主键、外键
+MySQL数据库管理系统：
+- 数据库
+- 数据表
+- 视图
+- 储存过程
+
 #### Tips：修改密码
 ALTER USER "root"@"localhost" IDENTIFIED  BY "你的新密码";  
 【注意：重点啊，如果你没有设置认证方式，默认的密码加密方式是：caching_sha2_password，而现在很多客户端工具还不支持这种加密认证方式，连接测试的时候就会报错：client does not support  authentication protocol requested by server; consider upgrading MySQL client，这里的错误信息就是不支持身份认证方式，没关系，去my.ini里面在[mysqld]下面加上这句话即可：default_authentication_plugin=mysql_native_password】
@@ -26,3 +38,17 @@ ALTER USER "root"@"localhost" IDENTIFIED  BY "你的新密码";
 - **SHOW TABLES**:显示指定数据库的所有表，使用该命令前需要使用 use 命令来选择要操作的数据库。
 - **SHOW COLUMNS FROM 数据表**:显示数据表的属性，属性类型，主键信息 ，是否为 NULL，默认值等其他信息。
 - **SHOW INDEX FROM 数据表**:显示数据表的详细索引信息，包括PRIMARY KEY（主键）。
+
+### 5 视图
+#### 5.1 数据库视图
+是虚拟表或逻辑表，被定义为具有连接的SQL select查询语句。  
+优点：
+- 允许简化复杂查询：将不同基础表的不同字段抽选出来组成一个新表（视图），使用者就可以根据这个新表进行查询，而不需要各种表的连接查询的复杂语句。【类似抽象出一个新表】
+- 有助于限制对特定用户的数据访问：抽取非敏感数据出来给特定用户查询。
+- 提供额外安全层：只读模式，只允许查询，不允许修改。
+- 启用了计算列：数据库表不应该具有计算列，但数据库视图可以。
+- 实现向后兼容。
+缺点：
+- 性能：慢，如果视图基于其他视图创建，会更慢。
+- 表依赖关系：根据数据库的基础表创建一个视图。每当更改与其相关联的表的结构时，都必须更改视图。
+
