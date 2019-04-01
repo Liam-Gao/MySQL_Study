@@ -22,5 +22,6 @@ select由以下几个子句组成：
 - distinct是group by的特殊形式，区别：group by对结果进行排序，distinct不进行排序。
 #### 聚合函数
 AVG、COUNT、SUM、MIN、MAX，除了COUNT外，其他聚合函数在 执行计算时会忽略NULL值。
----
 ## 作业
+![Q1](https://github.com/Liam-Gao/MySQL_Study/blob/master/PNG/hw1-Q1.jpg)
+
