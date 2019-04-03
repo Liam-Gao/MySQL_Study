@@ -96,9 +96,11 @@ PersonId 是上表主键
 | PersonId    | int     |  
 | City        | varchar |  
 | State       | varchar |  
-AddressId 是上表主键  
+
+'''AddressId 是上表主键  
 编写一个 SQL 查询，满足条件：无论 person 是否有地址信息，都需要基于上述两表提供 person 的以下信息：FirstName, LastName, City, State  
-**select p.firstname, p.lastname, a.city, a.state from Person p left join address a on p.personid=a.personid;**  
+**select p.firstname, p.lastname, a.city, a.state from Person p left join address a on p.personid=a.personid;**
+'''
 ---
 项目六：删除重复的邮箱（难度：简单）  
 编写一个 SQL 查询，来删除 email 表中所有重复的电子邮箱，重复的邮箱里只保留 Id 最小 的那个。  
