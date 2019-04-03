@@ -48,15 +48,14 @@
 | H       | Math       |  
 | I       | Math       |   
 | A      | Math       |  
-+---------+------------+  
-
++---------+------------+。。  
 编写一个 SQL 查询，列出所有超过或等于5名学生的课。  
 应该输出:  
 +---------+  
 | class   |  
 +---------+  
 | Math    |  
-+---------+  
++---------+。。  
 Note:  
 学生在每个课中不应被重复计算。  
 **select class FROM (SELECT DISTINCT * from courses) as c GROUP BY c.class HAVING COUNT(class) >5;**  
@@ -104,9 +103,9 @@ PersonId 是上表主键
 | State       | varchar |  
 +-------------+---------+  
 AddressId 是上表主键  
-
 编写一个 SQL 查询，满足条件：无论 person 是否有地址信息，都需要基于上述两表提供 person 的以下信息：FirstName, LastName, City, State  
-
+**select p.firstname, p.lastname, a.city, a.state from Person p left join address a on p.personid=a.personid;**  
+---
 项目六：删除重复的邮箱（难度：简单）  
 编写一个 SQL 查询，来删除 email 表中所有重复的电子邮箱，重复的邮箱里只保留 Id 最小 的那个。  
 +----+---------+  
@@ -124,5 +123,5 @@ Id 是这个表的主键。
 | 1  | a@b.com |  
 | 2  | c@d.com  |  
 +----+------------------+  
-
+**delete e1 from email e1, email e2 where e1.email=e2.email and e1.id>e2.id;**
 
