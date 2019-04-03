@@ -28,3 +28,58 @@
     - 自连接
     - UNION
     - 以上几种方式的区别和联系
+7. Notice：
+    - Where 和 Having 的使用场景
+
+
+项目三：超过5名学生的课（难度：简单）  
+创建如下所示的courses 表 ，有: student (学生) 和 class (课程)。  
+例如,表:  
++---------+------------+  
+| student | class      |  
++---------+------------+  
+| A       | Math       |  
+| B       | English    |  
+| C       | Math       |  
+| D       | Biology    |  
+| E       | Math       |  
+| F       | Computer   |  
+| G       | Math       |  
+| H       | Math       |  
+| I       | Math       |   
+| A      | Math       |  
++---------+------------+  
+
+编写一个 SQL 查询，列出所有超过或等于5名学生的课。  
+应该输出:  
++---------+  
+| class   |  
++---------+  
+| Math    |  
++---------+  
+Note:  
+学生在每个课中不应被重复计算。  
+**select class FROM (SELECT DISTINCT * from courses) as c GROUP BY c.class HAVING COUNT(class) >5;**  
+
+
+项目四：交换工资（难度：简单）  
+创建一个 salary表，如下所示，有m=男性 和 f=女性的值 。  
+例如:  
+| id | name | sex | salary |  
+|----|------|-----|--------|  
+| 1  | A    | m   | 2500   |  
+| 2  | B    | f   | 1500   |  
+| 3  | C    | m   | 5500   |  
+| 4  | D    | f   | 500    |  
+
+交换所有的 f 和 m 值(例如，将所有 f 值更改为 m，反之亦然)。要求使用一个更新查询，并且没有中间临时表。  
+运行你所编写的查询语句之后，将会得到以下表:  
+| id | name | sex | salary |  
+|----|------|-----|--------|  
+| 1  | A    | f  | 2500   |  
+| 2  | B    | m   | 1500   |  
+| 3  | C    | f   | 5500   |  
+| 4  | D    | m   | 500    |  
+
+
+
